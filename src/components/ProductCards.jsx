@@ -25,9 +25,13 @@ const ProductCards = () => {
         <span className="text-blue-700">{category || "All Products"}</span>
       </h2>
       <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
-        {newProducts.map((product) => (
-          <ProductCard key={product.product_id} product={product}></ProductCard>
-        ))}
+        {newProducts.length === 0 ? (
+          <p className="text-center text-4xl pt-24 font-bold text-gray-900 col-span-full">No products found.</p>
+        ) : (
+          newProducts.map((product) => (
+            <ProductCard key={product.product_id} product={product}></ProductCard>
+          ))
+        )}
       </div>
     </div>
   );

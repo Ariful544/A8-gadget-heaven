@@ -37,7 +37,7 @@ const Statistics = () => {
     { name: "price", uv: 20000, pv: 200, amt: 4200, price: 3700 },
   ];
   return (
-    <div className="">
+    <div className="min-h-[550px] mb-40">
       <div className="bg-[#9538E2]  py-12 text-center text-white h-56">
         <h3 className="md:text-5xl text-3xl font-medium">Statistics</h3>
         <p className="text-white mt-6 text-xs md:text-base text-center">
@@ -45,7 +45,7 @@ const Statistics = () => {
         </p>
 
         <div className="flex justify-center mt-20">
-          <div style={{ width: "80%", height: 150 }}>
+          <div style={{ width: "80%", height: 450 }}>
             <ResponsiveContainer width="100%" height="100%">
               <BarChart
                 data={data}

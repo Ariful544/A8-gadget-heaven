@@ -26,15 +26,18 @@ const Navbar = () => {
   );
 
   const [cartCount, setCartCount] = useState([]);
+  const [wishListCount, setWishListCount] = useState([]);
+  
   useEffect(() => {
     const storedList = getStoredList();
     setCartCount(storedList);
-  }, [cartCount]);
-  const [wishListCount, setWishListCount] = useState([]);
+  },[cartCount]);
+  
+  
   useEffect(() => {
     const storedList = getStoredWishList();
     setWishListCount(storedList);
-  }, [wishListCount]);
+  },[wishListCount]);
 
   return (
     <div

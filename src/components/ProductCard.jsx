@@ -5,7 +5,7 @@ const ProductCard = ({ product }) => {
   const { product_image, product_title, price } = product;
   const navigate = useNavigate();
 
-  const handleBuyNow = () => {
+  const handleProductDetails = () => {
     navigate(`/productdetails/${product_title}`);
   };
 
@@ -20,7 +20,7 @@ const ProductCard = ({ product }) => {
           <p>Price: ${price} </p>
           <div className="card-actions">
             <button
-              onClick={handleBuyNow}
+              onClick={handleProductDetails}
               className="border-2 px-6 py-2 rounded-full border-purple-700 text-[#9538E2] hover:bg-[#9538E2] hover:text-white "
             >
               View Details

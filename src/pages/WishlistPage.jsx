@@ -9,10 +9,8 @@ const WishlistPage = ({ allProducts }) => {
 
   useEffect(() => {
     const storedList = getStoredWishList();
-    const storedListInteger = storedList.map((id) => id);
-
     const productList = allProducts.filter((product) =>
-      storedListInteger.includes(product.product_id)
+      storedList.includes(product.product_id)
     );
 
     setCartList(productList);
@@ -20,15 +18,15 @@ const WishlistPage = ({ allProducts }) => {
 
   const handleRemoveFromCart = (product_id) => {
     const updatedCartList = cartList.filter(
-      (product) => product.product_id !== product_id,
-      toast.error("This product remove the WishList ")
+      (product) => product.product_id !== product_id
     );
-
     setCartList(updatedCartList);
+    toast.error("This product has been removed from the WishList.");
+
     const updatedStoredList = updatedCartList.map(
       (product) => product.product_id
     );
-    localStorage.setItem("product-list", JSON.stringify(updatedStoredList));
+    localStorage.setItem("wish-list", JSON.stringify(updatedStoredList));
   };
 
   return (
@@ -67,14 +65,14 @@ const WishlistPage = ({ allProducts }) => {
           ))}
         </div>
       ) : (
-        <p>Your cart is empty.</p>
+        <p>Your wishlist is empty.</p>
       )}
     </div>
   );
 };
 
-export default WishlistPage;
-
 WishlistPage.propTypes = {
   allProducts: PropTypes.array.isRequired,
 };
+
+export default WishlistPage;
