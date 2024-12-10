@@ -41,7 +41,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={` top-0 mt-4  z-10  ${
+      className={` top-0  z-10  ${
         isHome
           ? "bg-[#9538E2] text-white px-10"
           : isStatistics
